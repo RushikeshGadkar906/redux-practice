@@ -1,16 +1,16 @@
-import { ADD_TO_CART } from "../Constants"
+import { ADD_TO_CART } from "../constants"
 
 
 const initialState = {
     cartData: []
 }
-const cartItems = (state = initialState, action) => {
+const cartItems = (state = [], action) => {
     switch (action.type) {
         case ADD_TO_CART:
-            return {
-                ...StaticRange,
-                cartData: action.type
-            }
+            return [
+                ...state,
+                { cartData: action.data }
+            ]
             break;
 
         default:
