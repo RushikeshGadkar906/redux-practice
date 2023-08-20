@@ -1,10 +1,11 @@
 import React from "react";
 
-const Home = () => {
+const Home = (props) => {
+  // console.log("home",props);
   return (
     <div>
       <div className="add-to-cart">
-        {/* <span className="cart-count">7</span> */}
+        <span className="cart-count">{props.data.length}</span>
         <img src="https://static.vecteezy.com/system/resources/thumbnails/000/496/007/small/Ecommerce_998.jpg" />
       </div>
     <h1>Home Component</h1>
@@ -17,7 +18,11 @@ const Home = () => {
           <span>Price: $1000.00</span>
         </div>
         <div className="btn-wrapper item">
-          <button>Add To Cart</button>
+          <button
+          onClick={()=>props.addToCartHandler({
+            price:1000,name:"i-phone 11"
+          })}
+          >Add To Cart</button>
         </div>
       </div>
     </div>
